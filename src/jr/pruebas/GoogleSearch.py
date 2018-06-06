@@ -3,11 +3,7 @@ Created on 6 jun. 2018
 
 @author: jrodriguez
 '''
-import pprint
 import json
-import sys
-import codecs
-
 from googleapiclient.discovery import build
 
 'config'
