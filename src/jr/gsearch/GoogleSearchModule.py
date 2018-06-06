@@ -7,19 +7,16 @@ import codecs
 import json
 import pprint
 import sys
-
-from googleapiclient.discovery import build
+import os
 import pkg_resources
-
+from googleapiclient.discovery import build
 
 'config'
+my_path = os.path.abspath(os.path.dirname(__file__))
+path = os.path.join(my_path, "../../config/config.json")
 
-resource_package = 'config.json'  
-resource_path = '/'.join(('config'))  
-template = pkg_resources.resource_string(resource_package, resource_path)
-
-with open(template, 'r') as f:
-    config = json.load(f)
+with open(path) as json_data:
+    config = json.load(json_data)
     
 gsearch_apikey = config['DEFAULT']['GOOGLE_SEARCH_API_KEY'] 
 gsearch_cx = config['DEFAULT']['GOOGLE_SEARCH_CX']

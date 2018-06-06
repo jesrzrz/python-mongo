@@ -7,12 +7,7 @@ from flask import Flask
 from flask import request
 from jr.gsearch import GoogleSearchModule
 
-
 app = Flask(__name__)
-
-@app.route("/")
-def hello():
-    return "Hello World!"
 
 @app.route("/search")
 def search():
